@@ -8,6 +8,7 @@ import Login from './login.component'
 import SignUp from './signup.component'
 import UserDetails from './userDetails'
 import Steam from './Steam'
+import Policyprivacy from './privacypolicy'
 
 export default class NavbarComp extends Component{
         render(){
@@ -18,7 +19,7 @@ export default class NavbarComp extends Component{
         <Container>
             <Navbar.Brand>
                 <Link className="nav-link" to={'/steam'}>
-                    React-Bootstrap
+                    Steam
                 </Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -33,9 +34,9 @@ export default class NavbarComp extends Component{
                 </NavDropdown.Item>
                 <NavDropdown.Item href="https://www.instagram.com/boaula.digital/">Instagram</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                    Separated link (In test)
-                </NavDropdown.Item>
+                <Link className="nav-link" to={'/policy'}>
+                    Policy Privacy
+                </Link>
                 </NavDropdown>
             </Nav>
             </Navbar.Collapse>
@@ -49,6 +50,7 @@ export default class NavbarComp extends Component{
               <Route path="/sign-in" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
               <Route path="/steam" element={<Steam />} />
+              <Route path="/policy" element={<Policyprivacy/>} />
               <Route path="/userDetails" element={<UserDetails />} />
             </Routes>
           </div>
