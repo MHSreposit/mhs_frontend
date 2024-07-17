@@ -40,57 +40,62 @@ export default class Login extends Component {
   }
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <div className="container"> 
+      <div class="row justify-content-center">         
+        <form onSubmit={this.handleSubmit}>
+          <div className="App">
+            <div className='App'>
+              <h1 style={{color: "red", background: "black", fontWeight:"bold"}}>Login
+                <l><img src="logomhs.png" width={150} alt="MHS"></img></l>
+              </h1>
+            </div>
+            
+              <h3 style={{color: "red"}}>Email address</h3>
+              <input
+                type="email"
+                id="email"
+                className="form-control"
+                placeholder="Enter email"
+                onChange={(e)=> this.setState({email: e.target.value})}/>
+            </div>
 
-      <div className="mb-3">
-        <h3>Login
-          <l><img src="logomhs.png" alt="MHS"></img></l>
-        </h3>
-        
-          <label>Email address</label>
-          <input
-            type="email"
-            id="email"
-            className="form-control"
-            placeholder="Enter email"
-            onChange={(e)=> this.setState({email: e.target.value})}/>
-        </div>
-
-        <div className="mb-3">
-          <label>Password</label>
-          <input
-            type="password"
-            id="password"
-            className="form-control"
-            placeholder="Enter password"
-            onChange={(e)=> this.setState({password: e.target.value})}/>
-        </div>
-        <div className="mb-3">
-          <div className="custom-control custom-checkbox">
+          <div className="App">
+            <h3 style={{color: "red"}}>Password</h3>
             <input
-              type="checkbox"
-              className="custom-control-input"
-              id="customCheck1"
-            />
-            <label className="custom-control-label" htmlFor="customCheck1">
-                Lembre - me
-            </label>
+              type="password"
+              id="password"
+              className="form-control"
+              placeholder="Enter password"
+              onChange={(e)=> this.setState({password: e.target.value})}/>
           </div>
-        </div>
+          <div className="App">
+            <div className="custom-control custom-checkbox">
+              <input
+                type="checkbox"
+                className="custom-control-input"
+                id="customCheck1"
+              />
+              <label className="custom-control-label" htmlFor="customCheck1">
+                  Lembre - me
+              </label>
+            </div>
+          </div>
 
-        <div className="d-grid">
-          <button type="submit" id="btn" className="btn btn-primary">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Login
-          </button>
-        </div>
-        <p className="forgot-password text-right">
-          Forgot <a href="sign-up">Register?</a>
-        </p>
-      </form>
+          <div className="d-grid">
+            <button type="submit" id="btn" className="btn btn-dark">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              LOGIN
+            </button>
+          </div>
+          <p className="forgot-password text-right">
+            Forgot <a href="sign-up">Register?</a>
+          </p>
+        </form>
+    </div>
+    </div>
     )
   }
 }

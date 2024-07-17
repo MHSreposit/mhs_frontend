@@ -1,20 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
-
-
 body {
-  
-  margin: 0;
+  min-width: 372px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  background-color: #1a10a0 !important;
-  background-image: url("../public/background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 code {
@@ -22,320 +12,173 @@ code {
     monospace;
 }
 
-img {
-  width: 40px;
-  border-radius: 50%;
-  text-align:justify;
-}
-img, l {
-  display: inline-block;
-  color: rgb(255, 183, 183);
+#main_area {
+  margin-top: 50px;
 }
 
-h1,
-h2,
-h4,
-h5,
-h6,
-label,
-span {
-  color: #ffffff;
-  font-weight: 500;
-  font-family: "Lucida Console", "Courier New", monospace;
+.wrapper {
+  min-height: 100vh;
 }
 
-h3{
-  color: #ffffff;
-  text-decoration:solid;
-  text-decoration:underline;
-  letter-spacing: 5px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  font-style: oblique;
-  font-weight:bold
+.span-required {
+  font-size: 14px;
+  font-style: italic;
+  margin: 3px 0 0 1px;
+  color: red;
+  display: none;
 }
 
-body,
-html,
-.App,
-#root,
-.auth-wrapper {
-  margin-top: 1%;
-  width: 100%;
-  height: 95%;
+table, th, td {
+  border: 1px solid black;
 }
 
-.navbar-light {
-  background-color: rgb(248, 5, 5);
-  box-shadow: 0px 14px 80px rgba(0, 217, 255, 0.842);
+p.truncar-3l {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.auth-wrapper {
+h5.truncar-1l {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 469px) {
+  .mt-xs-3 {
+      margin-top: 1rem;
+  }
+}
+
+
+
+label:hover .text-dark {
+  transition: color 0.2s ease;
+  color: white !important;
+}
+
+label .text-dark {
+  transition: color 0.2s ease;
+}
+
+/* complementado para compatibilizar com Bootstrap >5.3.x mantendo o mesmo efeito de hover */
+.btn-check:checked+.btn-outline-danger h3,
+.btn-check:active+.btn-outline-danger h3,
+.btn-check:hover+.btn-outline-danger h3,
+.btn-check:checked+.btn-outline-danger hr,
+.btn-check:active+.btn-outline-danger hr,
+.btn-check:hover+.btn-outline-danger hr,
+.btn-check:checked+.btn-outline-danger h4,
+.btn-check:active+.btn-outline-danger h4,
+.btn-check:hover+.btn-outline-danger h4,
+.btn-check:checked+.btn-outline-danger p,
+.btn-check:active+.btn-outline-danger p,
+.btn-check:hover+.btn-outline-danger p,
+.btn-check:checked+.btn-outline-danger .text-dark,
+.btn-check:active+.btn-outline-danger .text-dark,
+.btn-check:hover+.btn-outline-danger .text-dark {
+  transition: color 0.2s ease;
+  color: white !important;
+}
+
+/* adicionado para compatibilizar com Bootstrap >5.3.x mantendo o mesmo efeito de hover */
+.btn-check:checked+.btn-outline-danger,
+.btn-check:active+.btn-outline-danger,
+.btn-check:hover+.btn-outline-danger {
+  transition: background-color 0.2s ease;
+  background-color: var(--bs-danger) !important;
+}
+
+.iconMargin {
+  font-size:24px; line-height:24px
+}
+
+.btn-glow {
+  box-shadow: -8px 7px 10px 3px rgba(255,18,0,1),
+  0 0 20px 5px rgba(245,134,49,0.8),
+  0 0 30px 15px rgba(238,0,255,0.5);
+}
+
+.flex-even {
+  flex: 1;
+  min-width: 300px;
+}
+
+.accordion-button:not(.collapsed) {
+  color: white;
+  background-color: #dc3545;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+fieldset.row .form-floating>label {
+  margin-left: calc(var(--bs-gutter-x) * 0.5);
+}
+
+/* adicionado para deixar links de paginação em vermelho */
+.page-link {
+  color: var(--bs-danger);
+}
+
+ul {
+    cursor: pointer;
+    overflow: hidden; /* remove o estouro do elemento */
+    text-overflow: ellipsis; /* adiciona “...” no final */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* quantidade de linhas */
+    -webkit-box-orient: vertical; /* conteúdo será apresentado verticalmente */
+}
+
+.search-container {
+  width: 280px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  text-align: left;
 }
 
-.auth-inner {
-  width: 60%;
-  margin: auto;
-  background: rgb(253, 25, 25);
-  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
-  padding: 40px 55px 45px 55px;
-  border-radius: 15px;
-  transition: all 0.3s;
-  box-shadow: 0px 0px 20px 10px #e048d3;
-  animation: shadows 3s infinite;
-  opacity: 1;
-}
-@keyframes shadows {
-  0% {
-    text-shadow: #f58181b0 0 0 10px;
-    box-shadow: 0px 0px 20px 10px #f58181b0;
-  }
-  20% {
-    text-shadow: rgb(250, 41, 198) 0 0 10px;
-    box-shadow: 0px 0px 20px 10px rgba(250, 4, 209, 0.836);
-  }
-  40% {
-      text-shadow: rgb(240, 4, 248) 0 0 10px;
-      box-shadow: 0px 0px 20px 10px rebeccapuprle;
-    }
-  60% {
-    text-shadow: rgba(253, 250, 69, 0.89) 0 0 10px;
-    box-shadow: 0px 0px 20px 10px rebeccapuprle;
-  }
-  70% {
-      text-shadow: #e0d148b4 0 0 10px;
-      box-shadow: 0px 0px 20px 10px #e0d148b4;
-    }
-    90% {
-      text-shadow: rgba(253, 250, 69, 0.863) 0 0 10px;
-      box-shadow: 0px 0px 20px 10px rebeccapuprle;
-    }
-  100% {
-    text-shadow: #f58181b0 0 0 10px;
-    box-shadow: 0px 0px 20px 10px #f58181b0;
-  }
+.dropdown {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
 }
 
-
-.auth-wrapper .form-control:focus {
-    box-shadow: none;
-    border-color: #0805ac;
-    margin-top: 30px;
-    margin-bottom: 40px;
-}
-
-
-/* FOrmularios*/
-form {
-  margin-top: 5%;
-  margin-bottom: 5%;
-  font-size: 14px;
-}
-
-label, input {
-  margin-left: 20px;
-  text-align: left;
-  font-family: "Lucida Console", "Courier New", monospace;
-}
-
-label {
-  font-family: "Lucida Console", "Courier New", monospace;
-  font-weight: bold;
-}
-
-input {
-  border: 2px #323232 ;
-  padding: 10px;
-  margin-bottom: 20px ;
-  box-shadow: 2px 2px 2px black;
-}
-
-input:focus {
-  border-bottom: #cf08ae;
-
-}
-
-#esqueceu  {
-
-  margin-bottom: 10px;
-  margin-left: 60%;
- 
-  
-}
-
-
-
-input[type="submit"] {
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
+.dropdown:empty {
   border: none;
-  height: 40px;
-  border-radius: 20px;
-  margin-top: 30px;
-  color: #fff;
-  background-color: #f55235;
+}
+
+.dropdown-row {
   cursor: pointer;
-  text-decoration: none;
-  overflow: hidden;
-  transition: .5s ;
-  
+  text-align: start;
+  margin: 2px 0;
 }
 
-
-input[type="submit"]:hover {
-  background-color: #011420;
-  transition: .5s;
-  box-shadow: 0 0 5px #011420,
-  0 0 25px #011420,
-  0 0 50px #011420,
-  0 0 100px #011420;
-
+.input-search {
+  width: 220px;
 }
 
-input#email , input#password, input#fname, input#lname {
-  border-radius: 10px;
-  font-size: 14px;
-  font-family: "Lucida Console", "Courier New", monospace;
-}
-/* COntaniner Button */
-button#btn {
-  position: relative;
-  display: inline-block;
-  padding: 10px 80px;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: .5s;
-  letter-spacing: 4px;
-  font-weight: bold;
-  border-radius: 10px;
-  text-align: center;
-  border: none;
-  margin-bottom: 20px;
-  margin-top: 5px;
-  cursor: pointer;
-  color: #fff;
-  background-color: #ff002b;
-
-  box-shadow: 3px 3px 3px rgb(255, 1, 213) ;
+.search-inner {
+  display: flex;
 }
 
-button#btn:hover {
-  background: #fff;
-  color: #08558b;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgb(193, 192, 209),
-              0 0 25px rgb(110, 109, 150),
-              0 0 50px rgb(47, 37, 105),
-              0 0 100px rgb(39, 3, 167);
-
+.card-flutuante {
+  height: 500px;
+  width: 700px;
+  position: fixed;
+  z-index: 1000;
+  left: 2rem;
+  top: 2rem;
+  background-color: rgb(154, 215, 161);
 }
 
-button#btn span {
-  position: absolute;
-  display: block;
-}
-
-button#btn span:nth-child(1) {
-  top: 0;
-  left: -70%;
-  width: 70%;
-  height: 3px;
-  background: linear-gradient(90deg, transparent,#fff);
-  animation: btn-anim1 1s linear infinite;
-  }
-
-  @keyframes btn-anim1 {
-    0% {
-        left: -100%;
-    }
-    50%, 100% {
-        left: 100%;
-    }
-    }
-    
-    button#btn span:nth-child(2) {
-        top: -100%;
-        right: 0;
-        width: 3px;
-        height: 100%;
-        background: linear-gradient(180deg, transparent,#fff);
-        animation: btn-anim2 1s linear infinite;
-        animation-delay: .25s ;
-        }
-
-         @keyframes btn-anim2 {
-    0% {
-        top: -100%;
-    }
-    50%, 100% {
-        top: 100%;
-    }
-    }
-
-    button#btn span:nth-child(3) {
-        bottom: 0;
-        right: -100%;
-        width: 100%;
-        height: 3px;
-        background: linear-gradient(270deg, transparent, #fff);
-        animation: btn-anim3 1s linear infinite;
-        animation-delay: .5s ;
-        }
-        @keyframes btn-anim3 {
-          0% {
-              right: -100%;
-          }
-          50%, 100% {
-              right: 100%;
-          }
-          }
-      
-          button#btn span:nth-child(4) {
-              bottom: -100%;
-              left: 0;
-              width: 3px;
-              height: 100%;
-              background: linear-gradient(360deg, transparent,#fff);
-              animation: btn-anim4 1s linear infinite;
-              animation-delay: .75s ;
-            }
-
-              @keyframes btn-anim4 {
-                0% {
-                    bottom: -100%;
-                }
-                50%, 100% {
-                    bottom: 100%;
-                }
-                }
-
-.auth-wrapper h3 {
-  text-align: center;
-  margin: 0;
-  line-height: 1;
-  padding-bottom: 20px;
-}
-
-
-.custom-control-label {
-  font-weight: 400;
-}
-
-.forgot-password,
-.forgot-password a {
-  text-align: right;
-  font-size: 13px;
-  padding-top: 10px;
-  color: #7f7d7d;
-  margin: 0;
-}
-
-.forgot-password a {
-  color: #167bff;
+.centralizar {
+  justify-content: space-around;
+  margin-top: 32px;
+  flex-wrap: wrap;
+  align-items: center;
 }

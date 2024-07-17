@@ -48,64 +48,69 @@ export default class SignUp extends Component {
     
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h3>
-          Register
-          <l><img src="logomhs.png" alt="MHS"></img></l>
-        </h3>
+      <div className="container"> 
+      <div class="row justify-content-center">       
+        <form onSubmit={this.handleSubmit}>
+          <div className='App'>
+            <h1 style={{color: "red", background: "black", fontWeight:"bold"}}>
+              Register
+              <l><img src="logomhs.png" width={150} alt="MHS"></img></l>
+            </h1>
+          </div>
+          <div className="App">
+            <h3 style={{color: "red"}}>First name</h3>
+            <input
+              type="text"
+              id="fname"
+              className="form-control"
+              placeholder="First name"
+              onChange={(e)=> this.setState({fname: e.target.value})}/>
+          </div>
 
-        <div className="mb-3">
-          <label>First name</label>
-          <input
-            type="text"
-            id="fname"
-            className="form-control"
-            placeholder="First name"
-            onChange={(e)=> this.setState({fname: e.target.value})}/>
-        </div>
+          <div className="App">
+            <h3 style={{color: "red"}}>Last name</h3>
+            <input type="text" 
+              id="lname"
+            className="form-control" 
+            placeholder="Last name"
+            onChange={(e)=> this.setState({lname: e.target.value})}/>
+          </div>
 
-        <div className="mb-3">
-          <label>Last name</label>
-          <input type="text" 
-            id="lname"
-          className="form-control" 
-          placeholder="Last name"
-          onChange={(e)=> this.setState({lname: e.target.value})}/>
-        </div>
+          <div className="App">
+            <h3 style={{color: "red"}}>Email address</h3>
+            <input
+              type="email"
+              id="email"
+              className="form-control"
+              placeholder="Enter email"
+              onChange={(e)=> this.setState({email: e.target.value})}/>
+          </div>
 
-        <div className="mb-3">
-          <label>Email address</label>
-          <input
-            type="email"
-            id="email"
-            className="form-control"
-            placeholder="Enter email"
-            onChange={(e)=> this.setState({email: e.target.value})}/>
-        </div>
+          <div className="App">
+            <h3 style={{color: "red"}}>Password</h3>
+            <input
+              type="password"
+              id="password"
+              className="form-control"
+              placeholder="Enter password"
+            onChange={(e)=> this.setState({password: e.target.value})}/>
+          </div>
 
-        <div className="mb-3">
-          <label>Password</label>
-          <input
-            type="password"
-            id="password"
-            className="form-control"
-            placeholder="Enter password"
-          onChange={(e)=> this.setState({password: e.target.value})}/>
-        </div>
-
-        <div className="d-grid">
-          <button type="submit" id="btn" className="btn btn-primary">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            Register
-          </button>
-        </div>
-        <p className="forgot-password text-right">
-          Already registered <a href="/sign-in">sign in?</a>
-        </p>
-      </form>
+          <div className="d-grid">
+            <button type="submit" id="btn" className="btn btn-dark">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              Register
+            </button>
+          </div>
+          <p className="forgot-password text-right">
+            Already registered <a href="/sign-in">sign in?</a>
+          </p>
+        </form>
+      </div>
+      </div>
     )
   }
 }
