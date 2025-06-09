@@ -26,6 +26,9 @@ export default class NavbarComp extends Component{
                 <Link className="nav-link" to={'/sign-in'}>Login</Link>
                 <Link className="nav-link" to={'/sign-up'}>Register</Link>
                 <Link className="nav-link" to={'https://store.steampowered.com/app/2589400/Math_High_Speed/'}>Steam</Link>
+                <Link className="nav-link" to="https://www.dropbox.com/scl/fi/le1g5ccw581fu67emgwl6/Roleta-Matem-tica.apk?rlkey=uqtgnjiy4dxrqllrk4t2rntwi&st=4z6nbn6y&dl=1" target="_blank" rel="noopener noreferrer">
+                  Download Roleta Matemática
+                </Link>
 
               <Navbar.Collapse className="justify-content-end">
                 <NavDropdown className="nav-link text-warning" title="Social media" id="basic-nav-dropdown">
