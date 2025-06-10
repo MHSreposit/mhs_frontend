@@ -28,7 +28,7 @@ export default function Home () {
             
             <p>Instalar ROLETA MATEMÁTICA no Celular Android
                 <p><button className="btn btn-danger" disabled={buttonActive} onClick={handleClick}>Download do APK</button></p>
-                {download && <p style={{color:"white"}}> Aguarde o Download - após Download concluido extraia o APK compactado.</p>};
+                {download && <p style={{color:"white"}}> Aguarde o Download.</p>};
                 <p>{download}</p>
                 {download &&  <iframe src={download}></iframe>}
             </p>
