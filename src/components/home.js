@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const urlToDownload = 'https://drive.google.com/uc?export=download&id=1h9KLTAq0BnRc7aLTysZCgWJ3BOHo3Wm3'
+const urlToDownload = 'https://www.dropbox.com/scl/fi/8wjcfsqn2c3x31b7u57w5/roleta-matematica.apk?rlkey=j526g961zzc2419fas1yf1wpg&st=lpvw65dk&dl=1'
 export default function Home () {
     const [download, setDownload] = useState('');
     const [buttonActive, setbuttonActive] = useState (false);
@@ -26,7 +26,7 @@ export default function Home () {
             </p>
             <p>Logar e entrar para o Ranking Mundial</p>
             
-            <p>Instalar MHS no Celular Android
+            <p>Instalar ROLETA MATEMÁTICA no Celular Android
                 <p><button className="btn btn-danger" disabled={buttonActive} onClick={handleClick}>Download do APK</button></p>
                 {download && <p style={{color:"white"}}> Aguarde o Download - após Download concluido extraia o APK compactado.</p>};
                 <p>{download}</p>
