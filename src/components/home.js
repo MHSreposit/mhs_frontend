@@ -2,18 +2,21 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const urlToDownload = 'https://www.dropbox.com/scl/fi/8wjcfsqn2c3x31b7u57w5/roleta-matematica.apk?rlkey=j526g961zzc2419fas1yf1wpg&st=lpvw65dk&dl=1';
+const urlAPK = 'https://www.dropbox.com/scl/fi/8wjcfsqn2c3x31b7u57w5/roleta-matematica.apk?rlkey=j526g961zzc2419fas1yf1wpg&st=lpvw65dk&dl=1';
+const urlViewSimple = 'https://www.dropbox.com/scl/fi/8ijbar7yffcobdi4lo3dl/ViewSimple-1.0.exe?rlkey=1nj71s1x266h7jlk7qnrpmeos&st=rwo301en&dl=1';
 
 export default function Home() {
-    const [download, setDownload] = useState('');
-    const [buttonActive, setButtonActive] = useState(false);
+    const [apkDownloaded, setApkDownloaded] = useState(false);
+    const [viewDownloaded, setViewDownloaded] = useState(false);
 
-    const handleClick = () => {
-        setDownload(urlToDownload);
-        setButtonActive(true);
+    const handleApkDownload = () => {
+        setApkDownloaded(true);
+        window.location.href = urlAPK;
+    };
 
-        // Forçar o navegador a iniciar o download automaticamente
-        window.location.href = urlToDownload;
+    const handleViewDownload = () => {
+        setViewDownloaded(true);
+        window.location.href = urlViewSimple;
     };
 
     return (
@@ -38,22 +41,41 @@ export default function Home() {
 
                     <p>Logar e entrar para o Ranking Mundial</p>
 
+                    {/* Download ROLETA MATEMÁTICA */}
                     <p>Instalar ROLETA MATEMÁTICA no Celular Android</p>
                     <p>
                         <button
                             className="btn btn-danger"
-                            disabled={buttonActive}
-                            onClick={handleClick}
+                            disabled={apkDownloaded}
+                            onClick={handleApkDownload}
                         >
                             Download do APK
                         </button>
                     </p>
-
-                    {download && <p style={{ color: "white" }}>Aguarde o Download...</p>}
-
-                    {download && (
+                    {apkDownloaded && <p style={{ color: "white" }}>Aguarde o Download...</p>}
+                    {apkDownloaded && (
                         <p>
-                            <a href={download} className="btn btn-success" download>
+                            <a href={urlAPK} className="btn btn-success" download>
+                                Clique aqui se o download não iniciar automaticamente
+                            </a>
+                        </p>
+                    )}
+
+                    {/* Download VIEW SIMPLE */}
+                    <p>Instalar VIEW SIMPLE - Visualizador de Imagens</p>
+                    <p>
+                        <button
+                            className="btn btn-danger"
+                            disabled={viewDownloaded}
+                            onClick={handleViewDownload}
+                        >
+                            Download ViewSimple
+                        </button>
+                    </p>
+                    {viewDownloaded && <p style={{ color: "white" }}>Aguarde o Download...</p>}
+                    {viewDownloaded && (
+                        <p>
+                            <a href={urlViewSimple} className="btn btn-success" download>
                                 Clique aqui se o download não iniciar automaticamente
                             </a>
                         </p>
